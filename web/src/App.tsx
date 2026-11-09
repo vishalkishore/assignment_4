@@ -11,6 +11,12 @@ const EPISODES = [
   { id: "three", ep: "EP 3", name: "The Courier Contract", part: "Part 3: VCG cheapest route" },
   { id: "answers", ep: "FINAL", name: "Assignment Answers", part: "Every question, answered and checked" },
 ] as const;
+const TEAM = [
+  ["Naman Soni", "B23CS1094"],
+  ["Vishal Kishore", "B23CS1078"],
+  ["Sandeep Soni", "B23CM1035"],
+  ["Aaditya Jain", "B23CS1091"],
+] as const;
 type EpId = (typeof EPISODES)[number]["id"];
 
 export default function App() {
@@ -56,7 +62,12 @@ export default function App() {
       )}
 
       <footer className="foot">
-        Every number on this page is computed by the assignment's Python code, running in your browser with Pyodide.
+        <ul className="team" aria-label="Team">
+          <li className="cast">CAST</li>
+          {TEAM.map(([name, roll]) => (
+            <li key={roll}><b>{name}</b><small>{roll}</small></li>
+          ))}
+        </ul>
       </footer>
     </div>
   );

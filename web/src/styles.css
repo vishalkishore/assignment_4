@@ -287,7 +287,15 @@ input[type="range"] { width: 100%; accent-color: var(--orange); }
 }
 @keyframes sweep { from { transform: translateX(-10%); } to { transform: translateX(160%); } }
 
-.foot { margin-top: 28px; color: var(--ink); font-size: 13px; font-weight: 500; text-align: center; }
+.foot { margin-top: 56px; color: var(--ink); font-size: 13px; font-weight: 500; text-align: center; }
+.foot p { margin: 0 0 6px; }
+.foot .team { list-style: none; margin: 16px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 18px 22px; }
+.foot .team li { background: var(--panel); border: 3px solid var(--ink); box-shadow: 4px 4px 0 var(--ink); padding: 5px 14px; transform: skewX(-6deg); text-align: left; }
+.foot .team li > * { display: block; transform: skewX(6deg); }
+.foot .team b { font: 14px var(--display); font-weight: 400; }
+.foot .team small { color: var(--mist); font-size: 11.5px; line-height: 1.25; }
+.foot .team li.cast { background: var(--ink); color: #fff; font: 13px var(--display); padding: 12px 14px; }
+@media (max-width: 760px) { .foot .team li { transform: none; } .foot .team li > * { transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   .charge i, .lamp { animation: none; }
