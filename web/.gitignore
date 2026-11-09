@@ -1,0 +1,4 @@
+node_modules
+dist
+# copied from ../src/auto by scripts/sync-py.mjs on every dev/build
+public/py

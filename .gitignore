@@ -1,0 +1,27 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+node_modules
+CLAUDE.md
+
+*.pdf
+*.log
+!report/main.pdf
+
+output/
+
+# LaTeX build files
+report/*.aux
+report/*.fdb_latexmk
+report/*.fls
+report/*.out
+report/*.synctex.gz
+report/*.jpg
+report/*.tex
