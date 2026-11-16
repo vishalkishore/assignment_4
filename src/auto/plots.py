@@ -91,3 +91,24 @@ def part3(results, path):
         ax.legend(fontsize=9)
     fig.savefig(path, dpi=120)
     plt.close(fig)
+
+
+def part2_win_overpay(results, path):
+    fig, (win, over) = plt.subplots(1, 2, figsize=(11, 4), constrained_layout=True)
+    fig.suptitle("First-price auction: what a higher bid buys", fontsize=12)
+    for data, color in zip(results, ("#2B7BD9", "#F06A35", "#2E9E6A")):
+        ks = [row["k"] for row in data["rows"]]
+        win.plot(ks, [row["bidder1_win_rate"] for row in data["rows"]], "o-", ms=3,
+                 color=color, label=f"n = {data['n']}")
+        over.plot(ks, [row["mean_overpayment"] for row in data["rows"]], "o-", ms=3,
+                  color=color, label=f"n = {data['n']}")
+        for ax in (win, over):
+            ax.axvline(data["equilibrium_k"], color=color, linestyle="--", linewidth=1)
+    win.set(xlabel="k (bid = k × value)", ylabel="win rate of bidder 1", title="Win rate")
+    over.set(xlabel="k (bid = k × value)", ylabel="winning bid − second bid",
+             title="Average overpayment by the winner")
+    for ax in (win, over):
+        ax.grid(alpha=0.3)
+        ax.legend()
+    fig.savefig(path, dpi=120)
+    plt.close(fig)

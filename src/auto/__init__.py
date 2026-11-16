@@ -64,6 +64,7 @@ def main() -> None:
             plots.part1_simulation(part["simulation"], OUTPUT / f"part1A_{n_rivals}_rival.{ext}")
             plots.part1_fixed(part["fixed_rival"], OUTPUT / f"part1B_{n_rivals}_rival.{ext}")
         plots.part2(results["part2"], OUTPUT / f"part2_first_price.{ext}")
+        plots.part2_win_overpay(results["part2"], OUTPUT / f"part2_win_overpay.{ext}")
         plots.part3(results["part3"]["misreports"], OUTPUT / f"part3_vcg_misreport.{ext}")
 
     print_summary(results)
