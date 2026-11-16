@@ -25,3 +25,5 @@ output/
 # report/*.synctex.gz
 # report/*.jpg
 # report/*.tex
+AGENTS.md
+SKILL.md
